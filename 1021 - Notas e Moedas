@@ -1,0 +1,55 @@
+import java.io.IOException;
+import java.util.Scanner;
+ 
+public class NotasEMoedas {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	double valor = sc.nextDouble();
+    	
+    	double valorDecimal = valor % 1;
+    	double valorInteiro = valor - valorDecimal;
+    	valorDecimal *= 100;
+    	int notas100 = (int) (valorInteiro / 100);
+    	int sobra = (int) (valorInteiro - notas100 * 100); 
+    	int notas50 = sobra / 50;
+    	sobra -= notas50 * 50;
+    	int notas20 = sobra / 20;
+    	sobra -= notas20 * 20;
+    	int notas10 = sobra / 10;
+    	sobra -= notas10 * 10;
+    	int notas5 = sobra / 5;
+    	sobra -= notas5 * 5;
+    	int notas2 = sobra / 2;
+    	sobra -= notas2 * 2;
+    	
+    	int moedas1 = sobra / 1;
+    	sobra -= moedas1 * 1;
+    	int moedas50 = (int) (valorDecimal / 50);
+    	int sobraDecimal = (int) (valorDecimal - moedas50 * 50);
+    	int moedas25 = sobraDecimal / 25;
+    	sobraDecimal -= moedas25 * 25;
+    	int moedas10 = sobraDecimal / 10;
+    	sobraDecimal -= moedas10 * 10;
+    	int moedas5 = sobraDecimal / 5;
+    	sobraDecimal -= moedas5 * 5;
+    	int moedas01 = sobraDecimal / 1;
+    	sobraDecimal -= moedas01 * 1;
+    	
+    	System.out.println("NOTAS:");
+    	System.out.printf("%d nota(s) de R$ 100.00\n", notas100);
+    	System.out.printf("%d nota(s) de R$ 50.00\n", notas50);
+    	System.out.printf("%d nota(s) de R$ 20.00\n", notas20);
+    	System.out.printf("%d nota(s) de R$ 10.00\n", notas10);
+    	System.out.printf("%d nota(s) de R$ 5.00\n", notas5);
+    	System.out.printf("%d nota(s) de R$ 2.00\n", notas2);
+    	System.out.println("MOEDAS:");
+    	System.out.printf("%d moeda(s) de R$ 1.00\n", moedas1);
+    	System.out.printf("%d moeda(s) de R$ 0.50\n", moedas50);
+    	System.out.printf("%d moeda(s) de R$ 0.25\n", moedas25);
+    	System.out.printf("%d moeda(s) de R$ 0.10\n", moedas10);
+    	System.out.printf("%d moeda(s) de R$ 0.05\n", moedas5);
+    	System.out.printf("%d moeda(s) de R$ 0.01\n", moedas01);
+    }
+ 
+}
