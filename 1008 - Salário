@@ -1,0 +1,17 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Salario {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	int num = sc.nextInt();
+    	int horasTrab = sc.nextInt();
+    	double salarioHora = sc.nextDouble();
+    	double salarioTotal = horasTrab * salarioHora;
+    	
+    	System.out.printf("NUMBER = %d\n", num);
+    	System.out.printf("SALARY = U$ %.2f\n", salarioTotal);
+    }
+ 
+}
