@@ -1,0 +1,35 @@
+import java.io.IOException;
+import java.util.Scanner;
+ 
+public class Cedulas {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner entrada = new Scanner(System.in);
+    	int valor = entrada.nextInt();
+    	
+    	int notas100 = valor/100;
+    	int sobra = valor - notas100*100;
+    	int notas50 = sobra/50;
+    	sobra -= notas50*50;
+    	int notas20 = sobra/20;
+    	sobra -= notas20*20;
+    	int notas10 = sobra/10;
+    	sobra -= notas10*10;
+    	int notas5 = sobra/5;
+    	sobra -= notas5*5;
+    	int notas2 = sobra/2;
+    	sobra -= notas2*2;
+    	int notas1 = sobra/1;
+    	sobra -= notas1*1;
+    	
+    	System.out.println(valor);
+    	System.out.println(notas100 + " nota(s) de R$ 100,00");
+    	System.out.println(notas50 + " nota(s) de R$ 50,00");
+    	System.out.println(notas20 + " nota(s) de R$ 20,00");
+    	System.out.println(notas10 + " nota(s) de R$ 10,00");
+    	System.out.println(notas5 + " nota(s) de R$ 5,00");
+    	System.out.println(notas2 + " nota(s) de R$ 2,00");
+    	System.out.println(notas1 + " nota(s) de R$ 1,00");
+    }
+ 
+}
