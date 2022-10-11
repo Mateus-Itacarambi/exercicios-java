@@ -1,0 +1,27 @@
+import java.io.IOException;
+import java.util.Scanner;
+ 
+public class ConversaoTempo {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	int tempoSegundos = sc.nextInt();
+    	
+    	if (tempoSegundos < 60) {
+    		System.out.printf("0:0:%d\n", tempoSegundos);
+    	} else if (tempoSegundos >= 60) {
+			int minutos = tempoSegundos/60;
+			int restoSegundos = tempoSegundos%60;
+			
+			if (minutos < 60) {
+	    		System.out.printf("0:%d:%d\n", minutos, restoSegundos);
+			} else {
+				int horas = minutos/60;
+				int restoMinutos = minutos%60;
+				
+				System.out.printf("%d:%d:%d\n", horas, restoMinutos, restoSegundos);
+			}
+		}
+    }
+ 
+}
