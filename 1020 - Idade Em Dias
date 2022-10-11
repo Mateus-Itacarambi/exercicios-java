@@ -1,0 +1,30 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class IdadeEmDias2 {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	int idadeDias = sc.nextInt();
+    	
+    	if (idadeDias < 30) {
+			System.out.printf("0 ano(s)\n0 mes(es)\n%d dia(s)\n", idadeDias);
+		} else if (idadeDias < 365) {
+			int idadeMes = idadeDias/30;
+			int sobraDias = idadeDias%30;
+			System.out.printf("0 ano(s)\n%d mes(es)\n%d dia(s)\n", idadeMes, sobraDias);
+		} else {
+			int idadeAnos = idadeDias/365;
+			int sobraDias = idadeDias%365;
+			
+			if (sobraDias >= 30) {
+				int idadeMes = sobraDias/30;
+				int sobraDias2 = sobraDias%30;
+				System.out.printf("%d ano(s)\n%d mes(es)\n%d dia(s)\n", idadeAnos, idadeMes, sobraDias2);
+			} else {
+				System.out.printf("%d ano(s)\n0 mes(es)\n%d dia(s)\n", idadeAnos, sobraDias);
+			}
+		}
+    }
+ 
+}
