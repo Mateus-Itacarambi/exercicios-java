@@ -1,0 +1,16 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class GastoCombustivel {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	int tempo = sc.nextInt();
+    	int velMedia = sc.nextInt();
+    	double distancia = tempo * velMedia;
+    	double litros = distancia / 12;
+    	
+    	System.out.printf("%.3f%n", litros);
+    }
+ 
+}
