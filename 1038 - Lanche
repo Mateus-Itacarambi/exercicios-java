@@ -1,0 +1,42 @@
+import java.io.IOException;
+import java.security.DrbgParameters.NextBytes;
+import java.util.Scanner;
+
+public class Lanche {
+ 
+    public static void main(String[] args) throws IOException {
+    	Scanner sc = new Scanner(System.in);
+    	int codigo = sc.nextInt();
+    	int quant = sc.nextInt();
+    	double total;
+    	
+    	switch (codigo) {
+		case 1: {
+			total = 4 * quant;
+			break;
+		}
+		case 2: {
+			total = 4.50 * quant;
+			break;
+		}
+		case 3: {
+			total = 5 * quant;
+			break;
+		}
+		case 4: {
+			total = 2 * quant;
+			break;
+		}
+		case 5: {
+			total = 1.50 * quant;
+			break;
+		}
+		default:
+			System.out.println("Código Inválido!!!");
+			total = 0;
+		}
+    	
+    	System.out.printf("Total: R$ %.2f\n", total);
+    }
+ 
+}
