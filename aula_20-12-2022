@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Lampada {
+	private boolean ligada;
+	private String potencia;
+	private String voltagem;
+
+	public static void main(String args[]) {
+		Lampada lampada1 = new Lampada();
+		Scanner sc = new Scanner(System.in);
+		char opcao;
+		
+		
+		lampada1.ligada = true;
+		lampada1.potencia = "9W";
+		lampada1.voltagem = "220v";
+		
+		laco: for (int i = 0; i < 100; i++) {
+			
+			System.out.println("Lampanda1:");
+			System.out.printf("Potência: %s\n", lampada1.potencia);
+			System.out.printf("Voltagem: %s\n", lampada1.voltagem);
+			System.out.printf("Está ligada? ");
+			
+			if (lampada1.ligada == true) {
+				System.out.printf("sim\nQuer desligar? (s/n)\n");
+				opcao = sc.next().charAt(0);
+				
+				if (i > 5) {
+					System.out.println("A lampada queimou :(");
+					break laco;
+				}
+				
+				if (opcao == 's') {
+					lampada1.ligada = false;
+					System.out.println("Você desligou a lampada!\n");
+				} else {
+					System.out.println("Ok, a lampada ainda está ligada!\n");
+				}
+			} else if (lampada1.ligada == false) {
+				System.out.printf("não\nQuer ligar? (s/n)\n");
+				opcao = sc.next().charAt(0);
+				
+				if (opcao == 's') {
+					lampada1.ligada = true;
+					System.out.println("Você ligou a lampada!\n");
+				} else {
+					System.out.println("Ok, a lampada ainda está desligada!\n");
+				}
+			}
+		}
+		
+	}
+}
